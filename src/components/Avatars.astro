@@ -1,0 +1,22 @@
+---
+// src/components/Avatar.astro
+const { imageUrl, name, size} = Astro.props;
+
+// Generate initials if no image is provided
+const initials = name
+  .split(" ")
+  .map((word: string) => word[0])
+  .join("")
+  .toUpperCase()
+  .slice(0, 2);
+---
+
+<div class="avatar-container">
+  {imageUrl ? (
+    <img class={`${size} rounded-full`} src={imageUrl} alt={name} />
+  ) : (
+    <div class={`relative inline-flex items-center justify-center ${size} overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600`}>
+      <span class="font-medium text-xs text-gray-600 dark:text-gray-300">{initials}</span>
+    </div>
+  )}
+</div>

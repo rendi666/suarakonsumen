@@ -1,0 +1,22 @@
+---
+const { typeAds, imgAds } = Astro.props;
+
+
+---
+{typeAds === '728x90' && (
+    <div class="text-center mt-4">
+        <a href="#" class="inline-block"><img src={imgAds} /></a>
+    </div>
+)}
+{typeAds === '300x600' && (
+    <div class="text-center mb-4">
+        <a href="#" class="inline-block"><img src={imgAds} class="block" /></a>
+    </div>
+)}
+{typeAds === 'billboard' && (
+    <div class="text-center py-4 bg-gray-100">
+        <a href="#" class="inline-block text-center"><img src={imgAds} class="m-auto" /></a>
+    </div>
+)}
+
+    

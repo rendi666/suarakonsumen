@@ -1,0 +1,82 @@
+---
+import content from '../data/content.json';
+
+import Icons from './Icons.astro';
+import Card from '../components/Card.astro';
+
+const { style } = Astro.props;
+const contentTanggapan = content.slice(1, 2);
+const contentReply = content.slice(3, 4);
+
+---
+{style === 'No Respon' && (
+    <div class="p-6 bg-gray-100 mb-4 rounded-lg mt-6">
+        <div class="flex items-center mb-2">
+            <Icons name="info" IconStyle="w-6 h-6 fill-gray-900" Box="0 0 18 19"/>
+            <h4 class="text-black text-sm font-semibold ml-2">Belum Ada Tanggapan</h4>
+        </div>
+        <p class="text-sm text-gray-900">Surat pembaca ini masih menunggu tanggapan dari pihak terkait, dan hingga saat ini belum ada respon resmi yang diberikan. Kami berharap pelaku usaha dapat segera memberikan klarifikasi atau jawaban untuk menyelesaikan permasalahan yang diangkat.</p>
+        <button type="button" class="px-3 py-2 mt-4 text-xs font-medium text-center inline-flex items-center text-white bg-sk-900 rounded-lg hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
+            <Icons name="reply" IconStyle="w-4 h-4 fill-white mr-1" Box="0 0 16 17"/>
+            Kirim Tanggapan
+        </button>
+    </div>
+)}
+{style === 'Respon' && (
+<div class="p-6 bg-green-50 mb-4 rounded-lg mt-6">
+    <div class="flex items-center mb-2">
+        <Icons name="check" IconStyle="w-6 h-6 fill-green-500" Box="0 0 18 19"/>
+        <h4 class="text-gray-900 text-sm font-semibold ml-2">Tanggapan</h4>
+    </div>
+    {
+        contentReply.map(({ title, short_desc, cover, link, avatar, user, date, comment, viewer }) => (
+            <Card 
+                name="feed" 
+                title={title} 
+                short_desc={short_desc} 
+                cover={cover} 
+                link={link} 
+                avatar={avatar} 
+                user={user} 
+                date={date}
+                comment={comment}
+                viewer={viewer}
+            />
+            <a href={link} type="button" class="px-3 py-2 mt-4 text-xs font-medium text-center inline-flex items-center text-white bg-green-700 rounded-lg hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
+                Lihat Detail
+                <Icons name="arrow-right" IconStyle="w-4 h-4 fill-white ml-1" Box="0 0 16 17"/>
+            </a>
+        ))
+    }
+</div>
+)}
+{style === 'Tanggapan' && (
+<div class="p-6 bg-red-50 mb-4 rounded-lg mb-8">
+    <div class="flex items-center mb-2">
+        <Icons name="info" IconStyle="w-6 h-6 fill-red-600" Box="0 0 18 19"/>
+        <h4 class="text-gray-900 text-sm font-semibold ml-2">Tanggapan</h4>
+    </div>
+    {
+        contentTanggapan.map(({ title, short_desc, cover, link, avatar, user, date, comment, viewer }) => (
+            <Card 
+                name="feed" 
+                title={title} 
+                short_desc={short_desc} 
+                cover={cover} 
+                link={link} 
+                avatar={avatar} 
+                user={user} 
+                date={date}
+                comment={comment}
+                viewer={viewer}
+            />
+            <a href={link} type="button" class="px-3 py-2 mt-4 text-xs font-medium text-center inline-flex items-center text-white bg-sk-900  rounded-lg hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
+                Lihat Detail
+                <Icons name="arrow-right" IconStyle="w-4 h-4 fill-white ml-1" Box="0 0 16 17"/>
+            </a>
+        ))
+    }
+</div>
+)}
+
+    
