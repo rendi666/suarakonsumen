@@ -38,6 +38,9 @@ module.exports = {
 			},
 			width: {
 				'container': '1124px',
+			},
+			maxWidth: {
+				'form': '640px'
 			}
 		},
 	},

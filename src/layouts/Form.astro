@@ -1,0 +1,24 @@
+
+---
+import Icons from '../components/Icons.astro';
+
+const { title, action } = Astro.props;
+
+---
+<!-- Modal header -->
+<div class="px-8 py-4 border-b rounded-t dark:border-gray-600">
+    <div class="w-full max-w-form mx-auto flex items-center justify-between">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            {title}
+        </h3>
+        <button type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+            <Icons name="close" IconStyle="w-3 h-3 fill-grey-600" Box="0 0 14 14"/>
+            <span class="sr-only">Close modal</span>
+        </button>
+    </div>
+</div>
+<div class="w-full max-w-form py-6 flex items-stretch mx-auto gap-4">
+    <form class="w-full" action={action} method="POST">
+        <slot name="form" />
+    </form>
+</div>

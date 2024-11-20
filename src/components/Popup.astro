@@ -42,7 +42,7 @@ const { title, form, page, size } = Astro.props;
                         </div>
                         <button class="w-full text-white bg-sk-900 hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">Login</button>
                         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                            Belum Punya Akun? <a href="#" class="text-sk-900 hover:underline dark:text-sk-500">Buat Akun</a>
+                            Belum Punya Akun? <a href="/register/" class="text-sk-900 hover:underline dark:text-sk-500">Buat Akun</a>
                         </div>
                         <div class="border-t border-gray-200 mt-4">
                             <div class="text-center text-sm text-gray-500 py-4">Atau Login Dengan</div>
@@ -62,6 +62,19 @@ const { title, form, page, size } = Astro.props;
                             </div>
                         </div>
                     </form>
+                )}
+                {form === 'success' && (
+                    <div class="text-center">
+                        <Icons name="check" IconStyle="w-32 h-32 fill-green-500 inline-block" Box="0 0 20 20"/>
+                        <h3 class="text-gray-900 font-semibold text-md">Pendaftaran Akun Berhasil</h3>
+                        <h3 class="text-gray-500 text-sm mt-2 mb-6">Silakan lanjut untuk memverifikasi data Anda</h3>
+                        <div class="flex items-center justify-center gap-6 py-4">
+                            <a href="#" class="px-5 py-3 text-sm font-medium text-center inline-flex items-center text-white bg-sk-700 rounded-lg hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
+                                Verifikasi Sekarang
+                            </a>
+                            <a href="/" class="text-sm text-sk-900 dark:text-sk-500">Nanti saja</a>
+                        </div>
+                    </div>
                 )}
             </div>
         </div>
