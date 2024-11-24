@@ -1,0 +1,18 @@
+---
+const { currentSection = "dashboard" } = Astro.props;
+---
+
+
+<div class="w-container px-4 flex items-stretch mx-auto gap-4">
+    <div class="w-2/12 pt-6 pb-10">
+        <a href="?section=dashboard">Dashboard</a>
+        <a href="?section=profile">Profile</a>
+        <a href="?section=settings">Settings</a>
+    </div>
+    <div class="w-10/12 pt-6 pb-10 relative">
+        <h1>{currentSection === "dashboard" ? "Dashboard" : currentSection.charAt(0).toUpperCase() + currentSection.slice(1)}</h1>
+        {currentSection === "dashboard" && <p>Welcome to your Dashboard!</p>}
+        {currentSection === "profile" && <p>Manage your profile here.</p>}
+        {currentSection === "settings" && <p>Adjust your settings here.</p>}
+    </div>
+</div>

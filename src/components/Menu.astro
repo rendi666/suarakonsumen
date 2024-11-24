@@ -1,0 +1,28 @@
+---
+import menuData from '../data/menu.json';
+
+const currentPath = Astro.url.pathname;
+
+
+---
+<nav class="flex items-center">
+    <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
+        {menuData.map(item => {
+            const isActive = item.slug === currentPath;
+            return (
+            <li>
+                <a
+                href={`${item.slug}`}
+                class={`text-gray-900 dark:text-white hover:text-sk-900 ${
+                    isActive
+                    ? "text-sk-900"
+                    : "text-gray-900 hover:text-sk-700"
+                }`}
+                >
+                {item.label}
+                </a>
+            </li>
+        );
+    })}
+    </ul>
+</nav>

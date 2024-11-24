@@ -8,5 +8,6 @@ export default defineConfig({
   integrations: [tailwind()],
   build: {
     assets: 'css'
-  }
+  },
+  output: 'hybrid'
 });

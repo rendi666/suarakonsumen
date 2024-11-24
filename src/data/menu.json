@@ -1,0 +1,30 @@
+[
+    {
+        "label": "Beranda",
+        "slug": "/"
+    },
+    {
+        "label": "Suara Konsumen",
+        "slug": "/category/"
+    },
+    {
+        "label": "Tanggapan",
+        "slug": "/category/"
+    },
+    {
+        "label": "Press Release",
+        "slug": "press-release"
+    },
+    {
+        "label": "Berita",
+        "slug": "berita"
+    },
+    {
+        "label": "Review",
+        "slug": "review"
+    },
+    {
+        "label": "Tips",
+        "slug": "tips"
+    }
+]
