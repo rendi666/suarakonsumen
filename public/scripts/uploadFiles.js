@@ -1,6 +1,6 @@
 // Handle file selection and preview
-function handleFileSelect(upload) {
-    const files = upload.target.files;
+function handleFileSelect(event) {
+    const files = event.target.files;
     const previewContainer = document.getElementById('preview');
     previewContainer.innerHTML = ''; // Clear previous previews
 
@@ -9,7 +9,7 @@ function handleFileSelect(upload) {
       const reader = new FileReader();
       reader.onload = (e) => {
         const imagePreview = document.createElement('div');
-        imagePreview.classList.add('relative', 'mb-4');
+        imagePreview.classList.add('relative');
         imagePreview.innerHTML = `
           <img src="${e.target.result}" alt="${file.name}" class="w-64 h-64 object-cover rounded-md shadow-lg ratio-video" />
         `;
@@ -20,6 +20,6 @@ function handleFileSelect(upload) {
   }
 
   // Remove image preview
-  function removePreview(upload) {
-    upload.target.closest('div').remove();
+  function removePreview(event) {
+    event.target.closest('div').remove();
   }

@@ -28,7 +28,7 @@ const contentFeed2 = content.slice(1, 10);
 	<Column>
 		<!-- COLUMN LEFT -->
 		{
-			contentHeadline.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+			contentHeadline.map(({ title, short_desc, cover, category, link, avatar, user, status, date, comment, viewer }) => (
 				<Card 
 					name="headline" 
 					slot="left"
@@ -39,6 +39,7 @@ const contentFeed2 = content.slice(1, 10);
 					link={link} 
 					avatar={avatar} 
 					user={user} 
+					status={status} 
 					date={date}
 					comment={comment}
 					viewer={viewer}
@@ -47,7 +48,7 @@ const contentFeed2 = content.slice(1, 10);
 		}
 		<CardHorizontal slot="left" title="Highlight Lainnya" />
 		{
-			contentFeed.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+			contentFeed.map(({ title, short_desc, cover, category, link, avatar, user,status, date, comment, viewer }) => (
 				<Card 
 					name="feed" 
 					slot="left"
@@ -58,6 +59,7 @@ const contentFeed2 = content.slice(1, 10);
 					link={link} 
 					avatar={avatar} 
 					user={user} 
+					status={status} 
 					date={date}
 					comment={comment}
 					viewer={viewer}
@@ -66,7 +68,7 @@ const contentFeed2 = content.slice(1, 10);
 		}
 		<Ads slot="left" typeAds="728x90" imgAds="https://transportdesigned.com/wp-content/uploads/Ad-Banner-728x90-02.png" />
 		{
-			contentFeed2.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+			contentFeed2.map(({ title, short_desc, cover, category, link, avatar, user,status, date, comment, viewer }) => (
 				<Card 
 					name="feed" 
 					slot="left"
@@ -77,6 +79,7 @@ const contentFeed2 = content.slice(1, 10);
 					link={link} 
 					avatar={avatar} 
 					user={user} 
+					status={status} 
 					date={date}
 					comment={comment}
 					viewer={viewer}

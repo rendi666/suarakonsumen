@@ -9,6 +9,8 @@
             "link":"/detail_suara_konsumen/",
             "avatar":"",
             "user":"Andi Julianto",
+            "status":"verified",
+            "status_input":"Tayang",
             "date":"20 Okt 2024 | 10:00 WIB",
             "comment":"10",
             "viewer":"2500"
@@ -23,6 +25,8 @@
             "link":"/detail_suara_konsumen_reply/",
             "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeRCsVvBWpqMB7xG-St5geqC7R_E3io4ksuQ&s",
             "user":"Corey Taylor",
+            "status_input":"Menunggu Moderasi",
+            "status":"verified",
             "date":"21 Okt 2024 | 10:00 WIB",
             "comment":"0",
             "viewer":"100"
@@ -37,6 +41,7 @@
             "link":"/detail_review/",
             "avatar":"https://mdbcdn.b-cdn.net/img/new/avatars/2.webp",
             "user":"Calvin SK",
+            "status":"",
             "date":"21 Okt 2024 | 10:00 WIB",
             "comment":"1",
             "viewer":"12938"
@@ -51,6 +56,8 @@
             "link":"/detail_tanggapan/",
             "avatar":"",
             "user":"Dito Kusumaputra Ning",
+            "status":"premium",
+            "status_input":"Draft",
             "date":"21 Okt 2024 | 10:00 WIB",
             "comment":"10",
             "viewer":"50123123"
@@ -65,6 +72,7 @@
             "link":"/detail_tips/",
             "avatar":"",
             "user":"Ario Atmaja",
+            "status":"",
             "date":"21 Okt 2024 | 10:00 WIB",
             "comment":"10",
             "viewer":"2056"
@@ -79,6 +87,7 @@
             "link":"/detail_press/",
             "avatar":"",
             "user":"Ario Atmaja",
+            "status":"",
             "date":"21 Okt 2024 | 10:00 WIB",
             "comment":"10",
             "viewer":"401200"
@@ -93,6 +102,7 @@
             "link":"/detail_berita/",
             "avatar":"",
             "user":"Ario Atmaja",
+            "status":"",
             "date":"21 Okt 2024 | 10:00 WIB",
             "comment":"10",
             "viewer":"401200"
@@ -107,6 +117,7 @@
             "link":"/detail_suara_konsumen/",
             "avatar":"",
             "user":"Nicko Williams",
+            "status":"verified",
             "date":"21 Okt 2024 | 10:00 WIB",
             "comment":"10",
             "viewer":"401200"
@@ -121,6 +132,7 @@
             "link":"/detail_suara_konsumen_reply/",
             "avatar":"",
             "user":"Pandji Pratama William",
+            "status":"verified",
             "date":"21 Okt 2024 | 10:00 WIB",
             "comment":"4",
             "viewer":"1001"
@@ -134,9 +146,74 @@
             "desc": "<p>Kami, para karyawan PT Amalan International Indonesia (amalan.com), kini harus berjuang mendapatkan hak-hak dasar kami.</p><p>Setelah akun Instagram salah satu teman yang menyuarakan masalah ini diretas, kami terus melanjutkan perjuangan dengan lebih banyak tekad.</p><p>Hingga saat ini, hak kami atas gaji dan komisi belum juga terpenuhi, meski perusahaan telah berkali-kali berjanji.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFlb0AAFOEA-1024x1024.jpeg'/> <p>Berawal dari pertemuan Townhall September 2023, perusahaan berjanji akan membayar komisi bulan Juli 2023 pada bulan yang sama, namun kenyataannya, janji ini tidak terealisasi. Kemudian, di Townhall Januari 2024, perusahaan menyatakan akan membuat “commitment letter” untuk melunasi tunggakan mulai April 2024. Sayangnya, ini hanya menjadi janji kosong tanpa adanya langkah nyata pembayaran.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSG6bEAIna2k-1024x1024.jpeg'/><p>Pada Februari 2024, perusahaan kembali mengabarkan bahwa pembayaran akan mundur hingga Mei, tetapi kenyataannya tetap nihil. Bagi kami, komitmen perusahaan tidak lebih dari janji manis tanpa bukti. Sejak April 2023, kami mulai mengalami keterlambatan gaji selama 1-2 minggu, di mana perusahaan beralasan kondisi tersebut terjadi karena pembayaran THR. Kini, keterlambatan telah mencapai 2-4 bulan dan semakin memperburuk kondisi keuangan kami. Sebagai karyawan, kami telah bekerja keras dan memahami kondisi perusahaan, namun kami tidak mendapat kejelasan tentang hak kami sendiri.</p> <img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFnbEAEfJAb-1024x1024.jpeg'/> <p>Kami memohon dukungan dari publik untuk membantu memperjuangkan hak-hak kami dan mendesak PT Amalan International Indonesia agar memenuhi komitmennya. Kami tidak akan diam dan akan terus menyuarakan keadilan hingga hak kami dipenuhi.</p>",
             "link":"/detail_press/",
             "avatar":"",
+            "status":"",
             "user":"Pandji Pratama William",
             "date":"21 Okt 2024 | 10:00 WIB",
             "comment":"15",
             "viewer":"8129"
+        },
+        {
+            "id":11,
+            "title": "Gaji Karyawan Amalan.com Tidak Dibayar Berbulan-Bulan",
+            "short_desc": "Kami, para karyawan PT Amalan International Indonesia (amalan.com), kini harus berjuang mendapatkan hak-hak dasar kami.",
+            "cover":"https://www.cakaplah.com/assets/news/20122017/cakaplah_y9zmv_14794.jpg",
+            "category":"Suara Konsumen",
+            "desc": "<p>Kami, para karyawan PT Amalan International Indonesia (amalan.com), kini harus berjuang mendapatkan hak-hak dasar kami.</p><p>Setelah akun Instagram salah satu teman yang menyuarakan masalah ini diretas, kami terus melanjutkan perjuangan dengan lebih banyak tekad.</p><p>Hingga saat ini, hak kami atas gaji dan komisi belum juga terpenuhi, meski perusahaan telah berkali-kali berjanji.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFlb0AAFOEA-1024x1024.jpeg'/> <p>Berawal dari pertemuan Townhall September 2023, perusahaan berjanji akan membayar komisi bulan Juli 2023 pada bulan yang sama, namun kenyataannya, janji ini tidak terealisasi. Kemudian, di Townhall Januari 2024, perusahaan menyatakan akan membuat “commitment letter” untuk melunasi tunggakan mulai April 2024. Sayangnya, ini hanya menjadi janji kosong tanpa adanya langkah nyata pembayaran.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSG6bEAIna2k-1024x1024.jpeg'/><p>Pada Februari 2024, perusahaan kembali mengabarkan bahwa pembayaran akan mundur hingga Mei, tetapi kenyataannya tetap nihil. Bagi kami, komitmen perusahaan tidak lebih dari janji manis tanpa bukti. Sejak April 2023, kami mulai mengalami keterlambatan gaji selama 1-2 minggu, di mana perusahaan beralasan kondisi tersebut terjadi karena pembayaran THR. Kini, keterlambatan telah mencapai 2-4 bulan dan semakin memperburuk kondisi keuangan kami. Sebagai karyawan, kami telah bekerja keras dan memahami kondisi perusahaan, namun kami tidak mendapat kejelasan tentang hak kami sendiri.</p> <img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFnbEAEfJAb-1024x1024.jpeg'/> <p>Kami memohon dukungan dari publik untuk membantu memperjuangkan hak-hak kami dan mendesak PT Amalan International Indonesia agar memenuhi komitmennya. Kami tidak akan diam dan akan terus menyuarakan keadilan hingga hak kami dipenuhi.</p>",
+            "link":"/input_edit/",
+            "avatar":"",
+            "user":"Andi Julianto",
+            "status":"verified",
+            "status_input":"Tayang",
+            "date":"20 Okt 2024 | 10:00 WIB",
+            "comment":"10",
+            "viewer":"2500"
+        },
+        {
+            "id":12,
+            "title": "Tanggapan Perihal Jumlah Kuota Internet XL dengan Paket Pembelian ",
+            "short_desc": "Tanggapan mengenai jumlah kuota saudara adit yang berkurang dan tidak semestinya",
+            "cover":"https://web-xlrvm.s3.ap-southeast-3.amazonaws.com/images/post/7e7cbfe6-3a02-4843-aec6-d10f61b0ed7b.jpg",
+            "category":"Tanggapan",
+            "desc": "<p>Kami, para karyawan PT Amalan International Indonesia (amalan.com), kini harus berjuang mendapatkan hak-hak dasar kami.</p><p>Setelah akun Instagram salah satu teman yang menyuarakan masalah ini diretas, kami terus melanjutkan perjuangan dengan lebih banyak tekad.</p><p>Hingga saat ini, hak kami atas gaji dan komisi belum juga terpenuhi, meski perusahaan telah berkali-kali berjanji.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFlb0AAFOEA-1024x1024.jpeg'/> <p>Berawal dari pertemuan Townhall September 2023, perusahaan berjanji akan membayar komisi bulan Juli 2023 pada bulan yang sama, namun kenyataannya, janji ini tidak terealisasi. Kemudian, di Townhall Januari 2024, perusahaan menyatakan akan membuat “commitment letter” untuk melunasi tunggakan mulai April 2024. Sayangnya, ini hanya menjadi janji kosong tanpa adanya langkah nyata pembayaran.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSG6bEAIna2k-1024x1024.jpeg'/><p>Pada Februari 2024, perusahaan kembali mengabarkan bahwa pembayaran akan mundur hingga Mei, tetapi kenyataannya tetap nihil. Bagi kami, komitmen perusahaan tidak lebih dari janji manis tanpa bukti. Sejak April 2023, kami mulai mengalami keterlambatan gaji selama 1-2 minggu, di mana perusahaan beralasan kondisi tersebut terjadi karena pembayaran THR. Kini, keterlambatan telah mencapai 2-4 bulan dan semakin memperburuk kondisi keuangan kami. Sebagai karyawan, kami telah bekerja keras dan memahami kondisi perusahaan, namun kami tidak mendapat kejelasan tentang hak kami sendiri.</p> <img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFnbEAEfJAb-1024x1024.jpeg'/> <p>Kami memohon dukungan dari publik untuk membantu memperjuangkan hak-hak kami dan mendesak PT Amalan International Indonesia agar memenuhi komitmennya. Kami tidak akan diam dan akan terus menyuarakan keadilan hingga hak kami dipenuhi.</p>",
+            "link":"/input_edit/",
+            "avatar":"",
+            "user":"Dito Kusumaputra Ning",
+            "status":"premium",
+            "status_input":"Moderasi",
+            "date":"21 Okt 2024 | 10:00 WIB",
+            "comment":"10",
+            "viewer":"50123123"
+        },
+        {
+            "id":13,
+            "title": "Keluhan Terhadap XXI Café: Pengalaman yang Mengecewakan",
+            "short_desc": "Saya ingin menyampaikan keluhan terkait pengalaman tidak menyenangkan yang saya alami saat berbelanja di XXI Café Bassura pada 15 Oktober 2024.",
+            "cover":"https://storage.googleapis.com/web-corp-prod-bucket/images/post/3b6b4119-35cc-42d9-9eb8-e42d7d76dc49.jpg",
+            "category":"Suara Konsumen",
+            "desc": "<p>Kami, para karyawan PT Amalan International Indonesia (amalan.com), kini harus berjuang mendapatkan hak-hak dasar kami.</p><p>Setelah akun Instagram salah satu teman yang menyuarakan masalah ini diretas, kami terus melanjutkan perjuangan dengan lebih banyak tekad.</p><p>Hingga saat ini, hak kami atas gaji dan komisi belum juga terpenuhi, meski perusahaan telah berkali-kali berjanji.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFlb0AAFOEA-1024x1024.jpeg'/> <p>Berawal dari pertemuan Townhall September 2023, perusahaan berjanji akan membayar komisi bulan Juli 2023 pada bulan yang sama, namun kenyataannya, janji ini tidak terealisasi. Kemudian, di Townhall Januari 2024, perusahaan menyatakan akan membuat “commitment letter” untuk melunasi tunggakan mulai April 2024. Sayangnya, ini hanya menjadi janji kosong tanpa adanya langkah nyata pembayaran.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSG6bEAIna2k-1024x1024.jpeg'/><p>Pada Februari 2024, perusahaan kembali mengabarkan bahwa pembayaran akan mundur hingga Mei, tetapi kenyataannya tetap nihil. Bagi kami, komitmen perusahaan tidak lebih dari janji manis tanpa bukti. Sejak April 2023, kami mulai mengalami keterlambatan gaji selama 1-2 minggu, di mana perusahaan beralasan kondisi tersebut terjadi karena pembayaran THR. Kini, keterlambatan telah mencapai 2-4 bulan dan semakin memperburuk kondisi keuangan kami. Sebagai karyawan, kami telah bekerja keras dan memahami kondisi perusahaan, namun kami tidak mendapat kejelasan tentang hak kami sendiri.</p> <img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFnbEAEfJAb-1024x1024.jpeg'/> <p>Kami memohon dukungan dari publik untuk membantu memperjuangkan hak-hak kami dan mendesak PT Amalan International Indonesia agar memenuhi komitmennya. Kami tidak akan diam dan akan terus menyuarakan keadilan hingga hak kami dipenuhi.</p>",
+            "link":"/input_edit/",
+            "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeRCsVvBWpqMB7xG-St5geqC7R_E3io4ksuQ&s",
+            "user":"Corey Taylor",
+            "status":"verified",
+            "status_input":"Draft",
+            "date":"21 Okt 2024 | 10:00 WIB",
+            "comment":"0",
+            "viewer":"100"
+        },
+        {
+            "id":14,
+            "title": "Tanggapan Perihal Jumlah Kuota Internet XL dengan Paket Pembelian ",
+            "short_desc": "Tanggapan mengenai jumlah kuota saudara adit yang berkurang dan tidak semestinya",
+            "cover":"https://web-xlrvm.s3.ap-southeast-3.amazonaws.com/images/post/7e7cbfe6-3a02-4843-aec6-d10f61b0ed7b.jpg",
+            "category":"Tanggapan",
+            "desc": "<p>Kami, para karyawan PT Amalan International Indonesia (amalan.com), kini harus berjuang mendapatkan hak-hak dasar kami.</p><p>Setelah akun Instagram salah satu teman yang menyuarakan masalah ini diretas, kami terus melanjutkan perjuangan dengan lebih banyak tekad.</p><p>Hingga saat ini, hak kami atas gaji dan komisi belum juga terpenuhi, meski perusahaan telah berkali-kali berjanji.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFlb0AAFOEA-1024x1024.jpeg'/> <p>Berawal dari pertemuan Townhall September 2023, perusahaan berjanji akan membayar komisi bulan Juli 2023 pada bulan yang sama, namun kenyataannya, janji ini tidak terealisasi. Kemudian, di Townhall Januari 2024, perusahaan menyatakan akan membuat “commitment letter” untuk melunasi tunggakan mulai April 2024. Sayangnya, ini hanya menjadi janji kosong tanpa adanya langkah nyata pembayaran.</p><img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSG6bEAIna2k-1024x1024.jpeg'/><p>Pada Februari 2024, perusahaan kembali mengabarkan bahwa pembayaran akan mundur hingga Mei, tetapi kenyataannya tetap nihil. Bagi kami, komitmen perusahaan tidak lebih dari janji manis tanpa bukti. Sejak April 2023, kami mulai mengalami keterlambatan gaji selama 1-2 minggu, di mana perusahaan beralasan kondisi tersebut terjadi karena pembayaran THR. Kini, keterlambatan telah mencapai 2-4 bulan dan semakin memperburuk kondisi keuangan kami. Sebagai karyawan, kami telah bekerja keras dan memahami kondisi perusahaan, namun kami tidak mendapat kejelasan tentang hak kami sendiri.</p> <img src='https://suarakonsumen.com/wp-content/uploads/2024/10/GafiSFnbEAEfJAb-1024x1024.jpeg'/> <p>Kami memohon dukungan dari publik untuk membantu memperjuangkan hak-hak kami dan mendesak PT Amalan International Indonesia agar memenuhi komitmennya. Kami tidak akan diam dan akan terus menyuarakan keadilan hingga hak kami dipenuhi.</p>",
+            "link":"/input_edit/",
+            "avatar":"",
+            "user":"Dito Kusumaputra Ning",
+            "status":"premium",
+            "status_input":"Ditolak",
+            "date":"21 Okt 2024 | 10:00 WIB",
+            "comment":"10",
+            "viewer":"50123123"
         }
 ]

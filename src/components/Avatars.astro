@@ -1,6 +1,7 @@
 ---
-// src/components/Avatar.astro
-const { imageUrl, name, size} = Astro.props;
+import Icons from './Icons.astro';
+
+const { imageUrl, name, size, statusAkun} = Astro.props;
 
 // Generate initials if no image is provided
 const initials = name
@@ -11,12 +12,20 @@ const initials = name
   .slice(0, 2);
 ---
 
-<div class="avatar-container">
+<div class="avatar-container relative">
   {imageUrl ? (
-    <img class={`${size} rounded-full`} src={imageUrl} alt={name} />
+    <div class="relative">
+      <img class={`${size} rounded-full`} src={imageUrl} alt={name} />
+    </div>
   ) : (
     <div class={`relative inline-flex items-center justify-center ${size} overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600`}>
       <span class="font-medium text-xs text-gray-600 dark:text-gray-300">{initials}</span>
     </div>
+  )}
+  {statusAkun === 'verified' && (
+    <Icons name="check" IconStyle="w-4 h-4 absolute -right-1.5 bottom-0 bg-white rounded-full fill-blue-600" Box="0 0 24 24"/>
+  )}
+  {statusAkun === 'premium' && (
+    <Icons name="check" IconStyle="w-4 h-4 absolute -right-1.5 bottom-0 bg-white rounded-full fill-yellow-300" Box="0 0 24 24"/>
   )}
 </div>

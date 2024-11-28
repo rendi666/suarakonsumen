@@ -5,7 +5,7 @@ import Icons from './Icons.astro';
 import { formatNumber } from '../utils/formatNumber';
 
 
-const { title, short_desc, desc, cover, category, link, avatar, user, date, comment, viewer, name} = Astro.props;
+const { title, short_desc, desc, cover, category, link, avatar, user, status, status_input, date, comment, viewer, name} = Astro.props;
 const countComment = formatNumber(comment); 
 const countViewer = formatNumber(viewer);
 ---
@@ -23,7 +23,7 @@ const countViewer = formatNumber(viewer);
             <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">{short_desc}</p>
             <div class="flex">
                 <div class="w-6/12 flex items-center gap-3">
-                    <Avatars imageUrl={avatar} name={user} size="w-8 h-8" />
+                    <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-8 h-8" />
                     <div class="font-medium text-sm dark:text-white">
                         <div class="max-w-32 truncate">{user}</div>
                     </div>
@@ -80,7 +80,7 @@ const countViewer = formatNumber(viewer);
         </div>
         <div class="flex mt-6">
             <div class="w-8/12 flex items-center gap-3">
-                <Avatars imageUrl={avatar} name={user} size="w-6 h-6" />
+                <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-8 h-8" />
                 <div class="font-medium text-sm dark:text-white">
                     <div class="max-w-32 truncate">{user}</div>
                 </div>
@@ -104,6 +104,42 @@ const countViewer = formatNumber(viewer);
         </div>
     </div>
 )}
+{name === 'feed-dashboard' && (
+<div class="w-full border-b border-gray-200 py-6">
+    <div class="flex gap-4">
+        <div class="w-8/12">
+            <Badge category={category}/>
+            <Badge status_input={status_input}/>
+            <a href={link}>
+                <h5 class="mb-2 mt-1 text-xl font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
+            </a>
+            <p class="text-sm text-gray-500">{short_desc}</p>
+        </div>
+        <a href={link} class="aspect-video bg-white block border border-gray-200 rounded-lg relative w-4/12">
+            <img class="rounded-lg object-cover w-full h-full" src={cover} alt={title} />
+        </a>
+    </div>
+    <div class="flex mt-6">
+        <div class="w-8/12 flex items-center gap-3">
+            <div class="text-sm text-gray-400">{date}</div>
+        </div>
+        <div class="w-4/12 flex items-center gap-6 justify-end">
+            <div class="flex items-center gap-2">
+                <Icons name="comment" IconStyle="w-6 h-6 fill-gray-500" Box="0 0 18 19"/>
+                <div class="text-gray-600 text-sm">
+                    {countComment}
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <Icons name="viewer" IconStyle="w-6 h-6 fill-gray-500" Box="0 0 18 19"/>
+                <div class="text-gray-600 text-sm">
+                    {countViewer}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+)}
 {name === 'feed-small' && (
 <div class="w-full border-b border-gray-200 pb-4 mb-4">
     <div class="flex gap-4 items-start">
@@ -119,7 +155,7 @@ const countViewer = formatNumber(viewer);
     </div>
     <div class="flex mt-4">
         <div class="w-full flex items-center gap-3">
-            <Avatars imageUrl={avatar} name={user} size="w-6 h-6" />
+            <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-6 h-6" />
             <div class="font-medium text-sm dark:text-white">
                 <div class="max-w-24 truncate">{user}</div>
             </div>
@@ -135,7 +171,7 @@ const countViewer = formatNumber(viewer);
         <h1 class="text-3xl text-black font-bold mt-1">{title}</h1>
         <div class="flex pt-4 pb-6">
             <div class="w-6/12 flex items-center gap-3">
-                <Avatars imageUrl={avatar} name={user} size="w-6 h-6" />
+                <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-6 h-6" />
                 <div class="font-medium text-sm dark:text-white">
                     <div class="max-w-32 truncate">{user}</div>
                 </div>

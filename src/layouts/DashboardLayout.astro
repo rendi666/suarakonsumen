@@ -1,18 +1,55 @@
 ---
-const { currentSection = "dashboard" } = Astro.props;
+import Icons from '../components/Icons.astro';
+import Avatars from '../components/Avatars.astro';
+
+const { title, currentPage } = Astro.props;
 ---
 
 
 <div class="w-container px-4 flex items-stretch mx-auto gap-4">
-    <div class="w-2/12 pt-6 pb-10">
-        <a href="?section=dashboard">Dashboard</a>
-        <a href="?section=profile">Profile</a>
-        <a href="?section=settings">Settings</a>
+    <div class="w-3/12 pt-6 pb-10">
+        <div class="text-center pb-8">
+            <Avatars imageUrl="" name="Andi Julianto" size="w-24 h-24" />
+            <h4 class="text-base font-bold text-black mt-4 mb-2">Andi Julianto</h4>
+            <h4 class="text-xs text-gray-500">Join 14 Agu 2024</h4>
+            <div class="flex items-center text-sm text-blue-600 justify-center mt-2">
+                <Icons name="check" IconStyle="w-6 h-6 bg-white rounded-full fill-blue-600 mr-2" Box="0 0 24 24"/>
+                Verified
+            </div>
+        </div>
+        <div class="bg-white divide-y divide-gray-100 rounded-lg shadow  dark:bg-gray-700 dark:divide-gray-600">
+            <div class="text-sm text-gray-900 dark:text-white w-full">
+                <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                    <li>
+                        <a href="/dashboard/" class={`text-sm flex items-center px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentPage === 'dashboard' && ( 'text-sk-900 bg-sk-100' )
+                        }`}>
+                            <Icons name="dashboard" IconStyle="w-4 h-4 fill-sk-900 mr-2" Box="0 0 18 19"/>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/profile/" class={`text-sm flex items-center px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentPage === 'profile' && ( 'text-sk-900 bg-sk-100' )
+                        }`}>
+                            <Icons name="edit-profile" IconStyle="w-4 h-4 fill-sk-900 mr-2" Box="0 0 18 19"/>
+                            Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pengaturan/" class={`text-sm flex items-center px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentPage === 'pengaturan' && ( 'text-sk-900 bg-sk-100' )
+                        }`}>
+                            <Icons name="setting" IconStyle="w-4 h-4 fill-sk-900 mr-2" Box="0 0 18 19"/>
+                            Pengaturan
+                        </a>
+                    </li>
+                </ul>
+                <div class="my-2 py-2 border-t border-gray-200">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" id="clear-storage">Log out</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="w-10/12 pt-6 pb-10 relative">
-        <h1>{currentSection === "dashboard" ? "Dashboard" : currentSection.charAt(0).toUpperCase() + currentSection.slice(1)}</h1>
-        {currentSection === "dashboard" && <p>Welcome to your Dashboard!</p>}
-        {currentSection === "profile" && <p>Manage your profile here.</p>}
-        {currentSection === "settings" && <p>Adjust your settings here.</p>}
+    <div class="w-9/12 pt-6 pb-10 relative pl-4">
+        <h2 class="text-3xl font-bold text-black border-b border-gray-200 pb-6">{title}</h2>
+        <slot name="right"></slot>
     </div>
 </div>
