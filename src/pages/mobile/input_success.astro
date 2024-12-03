@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Form from '../../layouts/Form.astro';
+import Icons from '../../components/Icons.astro';
+
+---
+
+<Layout title="Register">
+    <Form title="Buat Akun" action="#">
+        <div slot="form">
+            <div class="text-center">
+                <Icons name="check" IconStyle="w-32 h-32 fill-green-500 inline-block" Box="0 0 24 24"/>
+                <h3 class="text-gray-900 font-semibold text-md">Kirim Suara Konsumen Berhasil</h3>
+                <h3 class="text-gray-500 text-sm mt-2 mb-6">Silakan cek halaman Dashboard untuk melihat status dari suara konsumen Anda.</h3>
+                <div class="flex items-center justify-center gap-6 py-4">
+                    <a href="/mobile/dashboard/" class="px-5 py-3 text-sm font-medium text-center inline-flex items-center text-white bg-sk-700 rounded-lg hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
+                        Lihat Dashboard
+                    </a>
+                    <a href="/mobile/" class="text-sm text-sk-900 dark:text-sk-500">Kembali ke Beranda</a>
+                </div>
+            </div>
+        </div>
+    </Form>
+</Layout>

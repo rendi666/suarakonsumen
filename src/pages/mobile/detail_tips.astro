@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Column from '../../layouts/Column.astro';
+import Header from '../../components/Header.astro';
+
+import content from '../../data/content.json';
+
+import Card from '../../components/Card.astro';
+import CardHorizontal from '../../components/CardHorizontal.astro';
+import Title from '../../components/Title.astro';
+import Ads from '../../components/Ads.astro';
+import Share from '../../components/Share.astro';
+import Comment from '../../components/Comment.astro';
+import Statistic from '../../components/Statistic.astro';
+import Footer from '../../components/Footer.astro';
+
+// import { hasContentType } from 'astro/actions/runtime/utils.js';
+
+// Range Content
+const contentDetail = content.slice(4, 5);
+const contentFeed = content.slice(0, 4);
+const contentPress = content.slice(1, 4);
+const contentFeed2 = content.slice(1, 10);
+
+
+---
+
+<Layout title="Suara Konsumen">
+	<Header />
+	<Column>
+		<!-- COLUMN LEFT -->
+		{
+			contentDetail.map(({ title, short_desc, desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+				<Card 
+					name="detail" 
+					slot="left"
+					title={title} 
+					short_desc={short_desc} 
+					desc={desc} 
+					cover={cover} 
+					category={category} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+        <Share 
+            slot="left"
+        />
+        <Comment 
+            slot="left"
+        />
+		<CardHorizontal slot="left" title="Terkait" device="desktop" />
+		{
+			contentFeed.map(({ title, short_desc, cover, link, avatar, user, date, comment, viewer }) => (
+				<Card 
+					name="feed" 
+					slot="left"
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+        <Title title="Rekomendasi" slot="left" marginTop="mt-4"/>
+		{
+			contentFeed.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+				<Card 
+					name="feed" 
+					slot="left"
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+		<Ads slot="left" typeAds="728x90" imgAds="https://transportdesigned.com/wp-content/uploads/Ad-Banner-728x90-02.png" />
+		{
+			contentFeed2.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+				<Card 
+					name="feed" 
+					slot="left"
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+		<!-- COLUMN RIGHT -->
+		<Title title="Press Release" slot="right" style="button"/>
+		{
+			contentPress.map(({ title, short_desc, cover, link, avatar, user, date, comment, viewer }) => (
+				<Card 
+					name="feed-small" 
+					slot="right"
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+		<Ads slot="right" typeAds="300x600" imgAds="https://embed.bannerboo.com/crtv/b591250f2adfe_fallback.png" />
+
+		<Title title="Statistik" slot="right" style="button"/>
+		<Statistic slot="right" />
+
+
+		<Title title="Most Viewed" slot="right" style="button"/>
+		{
+			contentPress.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+				<Card 
+					name="feed-small" 
+					slot="right"
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category}
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+		<Ads slot="right" typeAds="300x600" imgAds="https://www.healthyads.com/wp-content/uploads/2018/12/gerber-300x250-healthcare-advertising.jpg" />
+
+		<Title title="Most Commented" slot="right" style="button"/>
+		{
+			contentPress.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+				<Card 
+					name="feed-small" 
+					slot="right"
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category}
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+
+		<Footer slot="right" />
+	</Column>
+</Layout>

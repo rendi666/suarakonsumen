@@ -1,0 +1,41 @@
+---
+import menuData from '../data/menuMobile.json';
+
+const currentPath = Astro.url.pathname;
+
+
+---
+<nav class="header__scroll__slide py-3 px-4">
+    <ul class="font-medium mt-0 text-sm header__scroll__wrap">
+        {menuData.map(item => {
+            const isActive = item.slug === currentPath;
+            return (
+            <li class="inline-block mr-4">
+                <a
+                href={`${item.slug}`}
+                class={`text-gray-900 dark:text-white hover:text-sk-900 ${
+                    isActive
+                    ? "text-sk-900"
+                    : "text-gray-900 hover:text-sk-700"
+                }`}
+                >
+                {item.label}
+                </a>
+            </li>
+        );
+    })}
+    </ul>
+</nav>
+
+<style>
+    .header__scroll__slide {
+        width: 100%;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    .header__scroll__wrap {
+        white-space: nowrap;
+    }
+</style>

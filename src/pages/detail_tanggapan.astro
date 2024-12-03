@@ -59,8 +59,8 @@ const contentFeed2 = content.slice(1, 10);
         <Comment 
             slot="left"
         />
-		<CardHorizontal slot="left" title="Artikel Terkait" />
-        <Title title="Rekomendasi" slot="left"/>
+		<CardHorizontal slot="left" title="Terkait" device="desktop" />
+        <Title title="Rekomendasi" slot="left" marginTop="mt-4"/>
 		{
 			contentFeed.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
 				<Card 

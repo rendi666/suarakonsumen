@@ -1,0 +1,65 @@
+---
+import Icons from '../components/Icons.astro';
+import Avatars from '../components/Avatars.astro';
+
+const {  currentPage } = Astro.props;
+---
+
+
+<div>
+    <div class="w-full pt-6">
+        <div class="pb-8 px-4 flex gap-4 items-center">
+            <Avatars imageUrl="" name="Andi Julianto" size="w-24 h-24" />
+            <div>
+                <h4 class="text-base font-bold text-black mb-2">Andi Julianto</h4>
+                <h4 class="text-xs text-gray-500">Join 14 Agu 2024</h4>
+                <div class="flex text-sm text-blue-600 mt-2">
+                    <Icons name="check" IconStyle="w-6 h-6 bg-white rounded-full fill-blue-600 mr-2" Box="0 0 24 24"/>
+                    Verified
+                </div>
+            </div>
+        </div>
+        <div class="bg-white">
+            <div class="text-sm text-gray-900 dark:text-white w-full header__scroll__slide">
+                <ul class="text-base text-gray-700 dark:text-gray-200 header__scroll__wrap border-b border-gray-200" aria-labelledby="dropdownInformationButton">
+                    <li class="inline-block">
+                        <a href="/mobile/dashboard/" class={`text-base flex items-center px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentPage === 'dashboard' && ( 'text-sk-900 border-b-2 border-sk-900' )
+                        }`}>
+                            <Icons name="dashboard" IconStyle="w-4 h-4 fill-sk-900 mr-2" Box="0 0 18 19"/>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="inline-block">
+                        <a href="/mobile/profile/" class={`text-base flex items-center px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentPage === 'profile' && ( 'text-sk-900 border-b-2 border-sk-900' )
+                        }`}>
+                            <Icons name="edit-profile" IconStyle="w-4 h-4 fill-sk-900 mr-2" Box="0 0 18 19"/>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="inline-block">
+                        <a href="/mobile/pengaturan/" class={`text-base flex items-center px-4 py-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white ${currentPage === 'pengaturan' && ( 'text-sk-900 border-b-2 border-sk-900' )
+                        }`}>
+                            <Icons name="setting" IconStyle="w-4 h-4 fill-sk-900 mr-2" Box="0 0 18 19"/>
+                            Pengaturan
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="w-full py-4 relative">
+        <slot name="right"></slot>
+    </div>
+</div>
+<style>
+    .header__scroll__slide {
+        width: 100%;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    .header__scroll__wrap {
+        white-space: nowrap;
+    }
+</style>

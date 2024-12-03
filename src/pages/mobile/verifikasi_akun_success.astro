@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Form from '../../layouts/Form.astro';
+import Icons from '../../components/Icons.astro';
+
+
+---
+
+<Layout title="Verifikasi Akun">
+    <Form title="Verifikasi Akun" action="/mobile/verifikasi_email/">
+        <div slot="form">
+            <div class="text-center">
+                <div class="w-32 h-32 inline-block bg-yellow-100 mb-6 rounded-full">
+                    <Icons name="waiting" IconStyle="w-24 h-24 fill-yellow-500 inline-block align-middle m-4" Box="0 0 24 24"/>
+                </div>
+                <h3 class="text-gray-900 font-semibold text-md">Menunggu Verifikasi</h3>
+                <h3 class="text-gray-500 text-sm mt-2 mb-6">Verifikasi Anda berhasil disubmit, selanjutnya silakan tunggu verifikasi dari tim kami.</h3>
+                <div class="flex items-center justify-center gap-6 py-4">
+                    <a href="/mobile/dashboard/" class="px-5 py-3 text-sm font-medium text-center inline-flex items-center text-white bg-sk-700 rounded-lg hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
+                        Lihat Dashboard
+                    </a>
+                    <a href="/mobile/" class="text-sm text-sk-900 dark:text-sk-500">Kembali Ke Beranda</a>
+                </div>
+            </div>
+        </div>
+    </Form>
+</Layout>
+<script is:inline src="/scripts/uploadFiles.js"></script>
+

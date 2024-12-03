@@ -1,0 +1,196 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/HeaderMobile.astro';
+
+import content from '../../data/contentMobile.json';
+
+import Card from '../../components/Card.astro';
+import Title from '../../components/Title.astro';
+import Ads from '../../components/Ads.astro';
+import Statistic from '../../components/Statistic.astro';
+import Footer from '../../components/Footer.astro';
+
+// import { hasContentType } from 'astro/actions/runtime/utils.js';
+
+// Range Content
+const contentHeadline = content.slice(0, 1);
+const contentFeed = content.slice(0, 4);
+const contentPress = content.slice(1, 4);
+const contentFeed2 = content.slice(1, 4);
+const contentFeed3 = content.slice(4, 6);
+
+---
+
+<Layout title="Suara Konsumen">
+	<Header />
+	<Title title="Press Release" marginTop="mt-4 mx-4"/>
+		<!-- COLUMN LEFT -->
+		{
+			contentHeadline.map(({ title, short_desc, cover, category, link, avatar, user, status, date, comment, viewer }) => (
+				<Card 
+					name="headline" 
+					
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					status={status} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+		{
+			contentFeed.map(({ title, short_desc, cover, category, link, avatar, user,status, date, comment, viewer }) => (
+				<Card 
+					name="feed" 
+					
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					status={status} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+		<Ads  typeAds="728x90" imgAds="https://transportdesigned.com/wp-content/uploads/Ad-Banner-728x90-02.png" />
+		{
+			contentFeed2.map(({ title, short_desc, cover, category, link, avatar, user,status, date, comment, viewer }) => (
+				<Card 
+					name="feed" 
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					status={status} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+		
+		{
+			contentFeed3.map(({ title, short_desc, cover, category, link, avatar, user,status, date, comment, viewer }) => (
+				<Card 
+					name="feed" 
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					status={status} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+
+		<Ads typeAds="300x600" imgAds="https://embed.bannerboo.com/crtv/b591250f2adfe_fallback.png" />
+		
+		<div class="px-4">
+			<Title title="Statistik" style="button"/>
+			<Statistic />
+		</div>
+
+		{
+			contentFeed2.map(({ title, short_desc, cover, category, link, avatar, user,status, date, comment, viewer }) => (
+				<Card 
+					name="feed" 
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					status={status} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+
+		<div class="px-4">
+			<Title title="Most Viewed" style="button"/>
+			{
+				contentPress.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+					<Card 
+						name="feed-small" 
+					
+						title={title} 
+						short_desc={short_desc} 
+						cover={cover} 
+						category={category}
+						link={link} 
+						avatar={avatar} 
+						user={user} 
+						date={date}
+						comment={comment}
+						viewer={viewer}
+					/>
+				))
+			}
+		</div>
+		<Ads typeAds="300x600" imgAds="https://www.healthyads.com/wp-content/uploads/2018/12/gerber-300x250-healthcare-advertising.jpg" />
+
+		<div class="px-4">
+			<Title title="Most Commented" style="button"/>
+			{
+				contentPress.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+					<Card 
+						name="feed-small" 
+					
+						title={title} 
+						short_desc={short_desc} 
+						cover={cover} 
+						category={category}
+						link={link} 
+						avatar={avatar} 
+						user={user} 
+						date={date}
+						comment={comment}
+						viewer={viewer}
+					/>
+				))
+			}
+		</div>
+
+		{
+			contentFeed2.map(({ title, short_desc, cover, category, link, avatar, user,status, date, comment, viewer }) => (
+				<Card 
+					name="feed" 
+					title={title} 
+					short_desc={short_desc} 
+					cover={cover} 
+					category={category} 
+					link={link} 
+					avatar={avatar} 
+					user={user} 
+					status={status} 
+					date={date}
+					comment={comment}
+					viewer={viewer}
+				/>
+			))
+		}
+
+		<Footer />
+</Layout>

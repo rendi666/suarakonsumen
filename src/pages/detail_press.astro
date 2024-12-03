@@ -6,6 +6,7 @@ import Header from '../components/Header.astro';
 import content from '../data/content.json';
 
 import Card from '../components/Card.astro';
+import CardHorizontal from '../components/CardHorizontal.astro';
 import Title from '../components/Title.astro';
 import Ads from '../components/Ads.astro';
 import Share from '../components/Share.astro';
@@ -17,7 +18,6 @@ import Footer from '../components/Footer.astro';
 
 // Range Content
 const contentDetail = content.slice(5, 6);
-const contentHighlight = content.slice(1, 4);
 const contentFeed = content.slice(0, 4);
 const contentPress = content.slice(1, 4);
 const contentFeed2 = content.slice(1, 10);
@@ -54,26 +54,8 @@ const contentFeed2 = content.slice(1, 10);
         <Comment 
             slot="left"
         />
-		<Title title="Suara Konsumen Lainnya" slot="left"/>
-		{
-			contentHighlight.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
-				<Card 
-					name="highlight" 
-					slot="highlight"
-					title={title} 
-					short_desc={short_desc} 
-					cover={cover} 
-					category={category} 
-					link={link} 
-					avatar={avatar} 
-					user={user} 
-					date={date}
-					comment={comment}
-					viewer={viewer}
-				/>
-			))
-		}
-        <Title title="Rekomendasi" slot="left"/>
+		<CardHorizontal slot="left" title="Terkait" device="desktop" />
+        <Title title="Rekomendasi" slot="left" marginTop="mt-4"/>
 		{
 			contentFeed.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
 				<Card 

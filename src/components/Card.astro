@@ -11,23 +11,25 @@ const countViewer = formatNumber(viewer);
 ---
 
 {name === 'headline' && (  
-    <div class="w-full border-b border-gray-200">
+    <div class="w-full border-b border-gray-200 px-4 lg:px-0">
         <a href={link} class="aspect-video block border border-gray-200 rounded-lg">
             <img class="rounded-lg object-cover w-full h-full" src={cover} alt={title} />
         </a>
         <div class="py-4">
             <Badge category={category}/>
             <a href={link}>
-                <h5 class="mb-2 text-2xl font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
+                <h5 class="mb-2 text-lg lg:text-2xl font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
             </a>
-            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">{short_desc}</p>
-            <div class="flex">
-                <div class="w-6/12 flex items-center gap-3">
-                    <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-8 h-8" />
-                    <div class="font-medium text-sm dark:text-white">
-                        <div class="max-w-32 truncate">{user}</div>
+            <p class="mb-3 font-normal text-sm lg:text-base text-gray-500 dark:text-gray-400">{short_desc}</p>
+            <div class="flex items-end lg:items-center">
+                <div class="w-6/12 lg:flex lg:items-center gap-3">
+                    <div class="flex items-center gap-3 mb-3 lg:mb-0">
+                        <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-8 h-8" />
+                        <div class="font-medium text-sm dark:text-white">
+                            <div class="max-w-32 truncate">{user}</div>
+                        </div>
                     </div>
-                    <div class="w-1 h-1 rounded-lg bg-gray-300"></div>
+                    <div class="w-1 h-1 rounded-lg bg-gray-300 hidden lg:block"></div>
                     <div class="text-sm text-gray-400">{date}</div>
                 </div>
                 <div class="w-6/12 flex items-center gap-6 justify-end">
@@ -49,45 +51,47 @@ const countViewer = formatNumber(viewer);
     </div>
 )}
 {name === 'highlight' && (
-    <div class="w-full">
+    <div class="flex-shrink-0" data-carousel-item>
         <a href={link} class="aspect-video block border border-gray-200 rounded-lg relative">
             <span class="absolute left-2 top-2">
                 <Badge category={category}/>
             </span>
             <img class="rounded-lg object-cover w-full h-full" src={cover} alt={title} />
         </a>
-        <div class="py-4">
+        <div class="pt-2 md:pt-4">
             <a href={link}>
-                <h5 class="mb-2 text-md font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
+                <h5 class="mb-2 text-sm md:text-md font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
             </a>
             <span class="mb-2 text-xs font-normal text-gray-400 dark:text-white">{date}</span>
         </div>
     </div>
 )}
 {name === 'feed' && (
-    <div class="w-full border-b border-gray-200 py-6">
-        <div class="flex gap-4">
-            <div class="w-8/12">
+    <div class="w-full border-b border-gray-200 py-6 px-4 lg:px-0">
+        <div class="flex items-center lg:items-start gap-4">
+            <div class="w-9/12 lg:w-8/12">
                 <Badge category={category}/>
                 <a href={link}>
-                    <h5 class="mb-2 mt-1 text-xl font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
+                    <h5 class="mb-2 mt-1 text-base lg:text-xl font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
                 </a>
-                <p class="text-sm text-gray-500">{short_desc}</p>
+                <p class="text-sm text-gray-500 line-clamp-3">{short_desc}</p>
             </div>
-            <a href={link} class="aspect-video bg-white block border border-gray-200 rounded-lg relative w-4/12">
+            <a href={link} class="aspect-square lg:aspect-video bg-white block border border-gray-200 rounded-lg relative w-3/12 lg:w-4/12 h-full">
                 <img class="rounded-lg object-cover w-full h-full" src={cover} alt={title} />
             </a>
         </div>
-        <div class="flex mt-6">
-            <div class="w-8/12 flex items-center gap-3">
-                <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-8 h-8" />
-                <div class="font-medium text-sm dark:text-white">
-                    <div class="max-w-32 truncate">{user}</div>
+        <div class="flex items-end lg:items-center mt-4 lg:mt-6">
+            <div class="w-6/12 lg:flex lg:items-center gap-3">
+                <div class="flex items-center gap-3 mb-3 lg:mb-0">
+                    <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-8 h-8" />
+                    <div class="font-medium text-sm dark:text-white">
+                        <div class="max-w-48 lg:max-w-32 truncate">{user}</div>
+                    </div>
                 </div>
-                <div class="w-1 h-1 rounded-lg bg-gray-300"></div>
+                <div class="w-1 h-1 rounded-lg bg-gray-300 hidden lg:block"></div>
                 <div class="text-sm text-gray-400">{date}</div>
             </div>
-            <div class="w-4/12 flex items-center gap-6 justify-end">
+            <div class="w-6/12 flex items-center gap-6 justify-end">
                 <div class="flex items-center gap-2">
                     <Icons name="comment" IconStyle="w-6 h-6 fill-gray-500" Box="0 0 18 19"/>
                     <div class="text-gray-600 text-sm">
@@ -105,25 +109,28 @@ const countViewer = formatNumber(viewer);
     </div>
 )}
 {name === 'feed-dashboard' && (
-<div class="w-full border-b border-gray-200 py-6">
-    <div class="flex gap-4">
-        <div class="w-8/12">
+<div class="w-full border-b border-gray-200 py-6 px-4 lg:px-0">
+    <div class="flex items-center lg:items-start gap-4">
+        <div class="w-9/12 lg:w-8/12">
             <Badge category={category}/>
-            <Badge status_input={status_input}/>
             <a href={link}>
-                <h5 class="mb-2 mt-1 text-xl font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
+                <h5 class="mb-2 mt-1 text-base lg:text-xl font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
             </a>
-            <p class="text-sm text-gray-500">{short_desc}</p>
+            <p class="text-sm text-gray-500 line-clamp-3">{short_desc}</p>
         </div>
-        <a href={link} class="aspect-video bg-white block border border-gray-200 rounded-lg relative w-4/12">
+        <a href={link} class="aspect-square lg:aspect-video bg-white block border border-gray-200 rounded-lg relative w-3/12 lg:w-4/12 h-full">
             <img class="rounded-lg object-cover w-full h-full" src={cover} alt={title} />
         </a>
     </div>
-    <div class="flex mt-6">
-        <div class="w-8/12 flex items-center gap-3">
+    <div class="flex items-end lg:items-center mt-4 lg:mt-6">
+        <div class="w-6/12 lg:flex lg:items-center gap-3">
+            <div class="flex items-center gap-3 mb-3 lg:mb-0">
+                <Badge status_input={status_input}/>
+            </div>
+            <div class="w-1 h-1 rounded-lg bg-gray-300 hidden lg:block"></div>
             <div class="text-sm text-gray-400">{date}</div>
         </div>
-        <div class="w-4/12 flex items-center gap-6 justify-end">
+        <div class="w-6/12 flex items-center gap-6 justify-end">
             <div class="flex items-center gap-2">
                 <Icons name="comment" IconStyle="w-6 h-6 fill-gray-500" Box="0 0 18 19"/>
                 <div class="text-gray-600 text-sm">
@@ -142,14 +149,14 @@ const countViewer = formatNumber(viewer);
 )}
 {name === 'feed-small' && (
 <div class="w-full border-b border-gray-200 pb-4 mb-4">
-    <div class="flex gap-4 items-start">
-        <div class="w-8/12">
+    <div class="flex gap-4 items-center md:items-start">
+        <div class="w-9/12 md:w-8/12">
             <Badge category={category}/>
             <a href={link}>
                 <h5 class="mb-2 mt-1 text-md font-semibold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
             </a>
         </div>
-        <a href={link} class="aspect-square bg-white block border border-gray-200 rounded-lg relative w-4/12">
+        <a href={link} class="aspect-square bg-white block border border-gray-200 rounded-lg relative w-3/12 md:w-4/12 h-full ">
             <img class="rounded-lg object-cover w-full h-full" src={cover} alt={title} />
         </a>
     </div>
@@ -166,28 +173,30 @@ const countViewer = formatNumber(viewer);
 </div>
 )}
 {name === 'detail' && (
-    <div class="mb-8">
+    <div class="mb-8 mt-4 md:mt-0 px-4 md:px-0">
         <Badge category={category}/>
-        <h1 class="text-3xl text-black font-bold mt-1">{title}</h1>
-        <div class="flex pt-4 pb-6">
-            <div class="w-6/12 flex items-center gap-3">
-                <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-6 h-6" />
-                <div class="font-medium text-sm dark:text-white">
-                    <div class="max-w-32 truncate">{user}</div>
+        <h1 class="text-xl md:text-3xl text-black font-bold mt-1">{title}</h1>
+        <div class="flex items-end lg:items-center my-4 lg:mt-6">
+            <div class="w-6/12 lg:flex lg:items-center gap-3">
+                <div class="flex items-center gap-3 mb-3 lg:mb-0">
+                    <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-8 h-8" />
+                    <div class="font-medium text-sm dark:text-white">
+                        <div class="max-w-48 lg:max-w-32 truncate">{user}</div>
+                    </div>
                 </div>
-                <div class="w-1 h-1 rounded-lg bg-gray-300"></div>
+                <div class="w-1 h-1 rounded-lg bg-gray-300 hidden lg:block"></div>
                 <div class="text-sm text-gray-400">{date}</div>
             </div>
             <div class="w-6/12 flex items-center gap-6 justify-end">
                 <div class="flex items-center gap-2">
-                    <Icons name="comment" IconStyle="w-6 h-6 fill-grey-500" Box="0 0 18 19"/>
-                    <div class="text-grey-600 text-sm">
+                    <Icons name="comment" IconStyle="w-6 h-6 fill-gray-500" Box="0 0 18 19"/>
+                    <div class="text-gray-600 text-sm">
                         {countComment}
                     </div>
                 </div>
                 <div class="flex items-center gap-2">
-                    <Icons name="viewer" IconStyle="w-6 h-6 fill-grey-500" Box="0 0 18 19"/>
-                    <div class="text-grey-600 text-sm">
+                    <Icons name="viewer" IconStyle="w-6 h-6 fill-gray-500" Box="0 0 18 19"/>
+                    <div class="text-gray-600 text-sm">
                         {countViewer}
                     </div>
                 </div>

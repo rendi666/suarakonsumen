@@ -7,10 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const offsetFromTop = (viewportHeight - sidebarHeight) - 303; // Set sticky top to 10% of the viewport height
         stickyContent.style.top = `${offsetFromTop}px`;
     };
+    // Initialize on page load
+    adjustStickyPosition();
 
     // Attach resize listener
     window.addEventListener("resize", adjustStickyPosition);
+    window.addEventListener("orientationchange", adjustStickyPosition);
 
-    // Initialize on page load
-    adjustStickyPosition();
 });

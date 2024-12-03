@@ -1,0 +1,30 @@
+[
+    {
+        "label": "Beranda",
+        "slug": "/mobile/"
+    },
+    {
+        "label": "Suara Konsumen",
+        "slug": "/mobile/category/"
+    },
+    {
+        "label": "Tanggapan",
+        "slug": "/mobile/category/"
+    },
+    {
+        "label": "Press Release",
+        "slug": "/mobile/press-release"
+    },
+    {
+        "label": "Berita",
+        "slug": "/mobile/berita"
+    },
+    {
+        "label": "Review",
+        "slug": "/mobile/review"
+    },
+    {
+        "label": "Tips",
+        "slug": "mobile/tips"
+    }
+]

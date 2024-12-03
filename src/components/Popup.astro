@@ -7,11 +7,11 @@ const { title, form, page, size } = Astro.props;
 
 ---
 <div id={page} tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 max-h-full">
-    <div class={`relative p-6 w-full ${size} max-h-full mb-6`}>
+    <div class={`relative p-4 lg:p-6 w-full ${size} max-h-full mb-6`}>
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <!-- Modal header -->
-            <div class="flex items-center justify-between px-8 py-4 border-b rounded-t dark:border-gray-600">
+            <div class="flex items-center justify-between px-6 lg:px-8 py-4 border-b rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                     {title}
                 </h3>
@@ -20,7 +20,7 @@ const { title, form, page, size } = Astro.props;
                     <span class="sr-only">Close modal</span>
                 </button>
             </div>
-            <div class="p-8">
+            <div class="p-6 lg:p-8">
                 {form === 'login' && (
                     <form class="space-y-4" action="#" id="login-toggle">
                         <div>
@@ -63,6 +63,57 @@ const { title, form, page, size } = Astro.props;
                         </div>
                     </form>
                 )}
+                {form === 'login-mobile' && (
+                <form class="space-y-4" action="#" id="login-toggle">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sk-500 focus:border-sk-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sk-500 focus:border-sk-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-sk-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-sk-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                            </div>
+                            <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ingatkan Saya</label>
+                        </div>
+                        <a href="#" class="text-sm text-sk-700 hover:underline dark:text-sk-500">Lupa Password?</a>
+                    </div>
+                    <button class="w-full text-white bg-sk-900 hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">Login</button>
+                    <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                        Belum Punya Akun? <a href="/mobile/register/" class="text-sk-900 hover:underline dark:text-sk-500">Buat Akun</a>
+                    </div>
+                    <div class="border-t border-gray-200 mt-4">
+                        <div class="text-center text-sm text-gray-500 py-4">Atau Login Dengan</div>
+                        <div class="">
+                            <button type="button" class="text-white w-full bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center dark:focus:ring-[#3b5998]/55 me-2 mb-2">
+                                <Icons name="fb" IconStyle="w-4 h-4 fill-white me-2" Box="0 0 20 20"/>
+                                Facebook
+                            </button>
+                            <button type="button" class="text-gray-900 w-full bg-white border border-gray-200 hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center dark:focus:ring-[#4285F4]/55 me-2 mb-2">
+                                <Icons name="google-color" IconStyle="w-4 h-4 fill-white me-2" Box="0 0 18 18"/>
+                                Google
+                            </button>
+                            <button type="button" class="text-white w-full bg-[#050708] hover:bg-[#050708]/70 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mb-2">
+                                <Icons name="apple" IconStyle="w-4 h-4 fill-white me-2" Box="0 0 18 18"/>
+                                Apple
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            )}
+                {form === 'search' && (
+                    <div class="relative w-full">
+                        <input type="search" id="search-dropdown" class="block p-2.5 focus:ring-sk-300 focus:border-gray-300 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-s-gray-300 border-s-1 border border-gray-300 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Search..." required />
+                        <button type="submit" class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-gray-100 border-s-gray-50 rounded-e-lg border border-gray-300 hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-200 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-200">
+                            <Icons name="search" IconStyle="w-4 h-4 fill-grey-600" Box="0 0 20 20"/>
+                            <span class="sr-only">Search</span>
+                        </button>
+                    </div>
+                )}   
             </div>
         </div>
     </div>

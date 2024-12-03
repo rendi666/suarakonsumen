@@ -1,33 +1,98 @@
 ---
 import content from '../data/content.json';
-
 import Card from '../components/Card.astro';
 import Title from '../components/Title.astro';
 
-const contentHighlight = content.slice(1, 4);
-const { title} = Astro.props;
+const { device, title } = Astro.props;
+const contentHighlight = content.slice(1, 6);
 ---
 
-<div class="py-4 border-b border-gray-200">
-	<Title title={title}/>
-	<div class="flex gap-3">
-		{
-			contentHighlight.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
-				<Card 
-					name="highlight" 
-					slot="highlight"
-					title={title} 
-					short_desc={short_desc} 
-					cover={cover} 
-					category={category} 
-					link={link} 
-					avatar={avatar} 
-					user={user} 
-					date={date}
-					comment={comment}
-					viewer={viewer}
-				/>
-			))
-		}
-	</div>
+<div class="py-4 px-4 lg:px-0 border-b border-gray-200">
+<Title title={title} slot="right" style="carousel"/>
+  <div class="swiper">
+    <!-- Swiper wrapper -->
+    <div class="swiper-wrapper">
+      {contentHighlight.map(({ title, short_desc, cover, category, link, avatar, user, date, comment, viewer }) => (
+        <div class="swiper-slide">
+          <Card
+            name="highlight"
+            slot="highlight"
+            title={title}
+            short_desc={short_desc}
+            cover={cover}
+            category={category}
+            link={link}
+            avatar={avatar}
+            user={user}
+            date={date}
+            comment={comment}
+            viewer={viewer}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
 </div>
+
+<!-- Add Swiper.js and CSS via CDN -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+
+{device === 'desktop' && (
+    <script is:inline>
+		document.addEventListener('DOMContentLoaded', () => {
+			const initSwiper = () => {
+			if (typeof Swiper !== 'undefined') {
+				new Swiper('.swiper', {
+				slidesPerView: 3,
+				spaceBetween: 16,
+				loop: true,
+				navigation: {
+					nextEl: '.carousel-button-next',
+					prevEl: '.carousel-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				});
+			} else {
+				console.error("Swiper is not loaded yet.");
+			}
+			};
+
+			initSwiper();
+		});
+	</script>
+)}
+{device === 'mobile' && (
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		const initSwiper = () => {
+		if (typeof Swiper !== 'undefined') {
+			new Swiper('.swiper', {
+			slidesPerView: 2,
+			spaceBetween: 16,
+			loop: true,
+			navigation: {
+				nextEl: '.carousel-button-next',
+				prevEl: '.carousel-button-prev',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			});
+		} else {
+			console.error("Swiper is not loaded yet.");
+		}
+		};
+
+		initSwiper();
+	});
+</script>
+)}
+
