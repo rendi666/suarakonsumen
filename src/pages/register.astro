@@ -7,7 +7,7 @@ import Icons from '../components/Icons.astro';
 ---
 
 <Layout title="Register">
-    <Form title="Buat Akun" action="/verifikasi_email/">
+    <Form title="Buat Akun" action="">
         <div slot="form">
             <div class="mb-6">
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
@@ -64,10 +64,10 @@ import Icons from '../components/Icons.astro';
                 <textarea id="address" rows="4" class="block resize-none p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-sk-500 focus:border-sk-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-sk-500 dark:focus:border-sk-500" placeholder="Write your thoughts here..."></textarea>
             </div>
             <div class="border-t border-gray-200 py-6">
-                <button type="submit" class="px-5 py-3 text-base font-medium text-center inline-flex items-center text-white bg-sk-700 rounded-lg hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
+                <a href="/verifikasi_email/" type="submit" class="px-5 py-3 text-base font-medium text-center inline-flex items-center text-white bg-sk-700 rounded-lg hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
                     Lanjut
                     <Icons name="arrow-right" IconStyle="w-3 h-3 fill-white ml-2" Box="0 0 14 14"/>
-                </button>
+                </a>
             </div>
         </div>
     </Form>
