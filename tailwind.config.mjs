@@ -40,7 +40,7 @@ module.exports = {
 				'container': '1124px',
 			},
 			maxWidth: {
-				'form': '640px'
+				'form': '720px'
 			}
 		},
 	},

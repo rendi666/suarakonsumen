@@ -2,15 +2,36 @@
 import Layout from '../../layouts/Layout.astro';
 import Form from '../../layouts/Form.astro';
 import Icons from '../../components/Icons.astro';
+import Card from '../../components/Card.astro';
 import Wyswyg from '../../components/Wyswyg.astro';
 
-
+import content from '../../data/contentMobile.json';
+const contentSuara = content.slice(0, 1);
 
 ---
 
 <Layout title="Kirim Tanggapan">
     <Form title="Kirim Tanggapan" action="">
         <div slot="form">
+            <div class="mb-6 bg-sk-100 p-4 pb-0 rounded-lg">
+                <label for="tanggapan" class="block mb-2 text-sm font-medium text-sk-900 dark:text-white">Tanggapan Suara Konsumen</label>
+                {
+                    contentSuara.map(({ title, short_desc, cover, link, avatar, user, date, comment, viewer }) => (
+                        <Card 
+                            name="feed-small" 
+                            title={title} 
+                            short_desc={short_desc} 
+                            cover={cover} 
+                            link={link} 
+                            avatar={avatar} 
+                            user={user} 
+                            date={date}
+                            comment={comment}
+                            viewer={viewer}
+                        />
+                    ))
+                }
+            </div>
             <div class="mb-6">
                 <label for="judul" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Judul</label>
                 <input type="text" id="judul" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sk-500 focus:border-sk-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Tulis judul" required />
