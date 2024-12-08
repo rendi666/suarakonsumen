@@ -8,14 +8,14 @@ import Card from '../../components/Card.astro';
 import content from '../../data/contentMobile.json';
 // import Icons from '../../components/Icons.astro';
 
-const contentFeed = content.slice(10, 14);
+const contentFeed = content.slice(10, 12);
 
 
 ---
 
 <Layout title="Dashboard">
     <Header />
-    <DashboardLayout currentPage="dashboard">
+    <DashboardLayout currentPage="dashboard" akunType="Personal">
         <div slot="right">
             <div class="flex my-4 gap-4 px-4">
                 <div class="relative w-6/12 lg:w-4/12">
@@ -25,23 +25,16 @@ const contentFeed = content.slice(10, 14);
                         <span class="sr-only">Search</span>
                     </button>
                 </div>
-                <div class="w-6/12 lg:w-4/12">
-                    <select id="default" class="block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Pilih Kategori</option>
-                        <option value="US">Suara Konsumen</option>
-                        <option value="CA">Tanggapan</option>
-                    </select>
-                </div>
             </div>
             {
-                contentFeed.map(({ title, short_desc, cover, category, link, avatar, user, status, status_input, date, comment, viewer }) => (
+                contentFeed.map(({ title, short_desc, cover, reply, link, avatar, user, status, status_input, date, comment, viewer }) => (
                     <Card 
                         name="feed-dashboard" 
                         slot="left"
                         title={title} 
                         short_desc={short_desc} 
                         cover={cover} 
-                        category={category} 
+                        reply={reply}
                         link={link} 
                         avatar={avatar} 
                         user={user} 

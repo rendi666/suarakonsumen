@@ -1,7 +1,7 @@
 ---
 import Icons from './Icons.astro';
 
-const { category, status_input } = Astro.props;
+const { category, status_input, reply } = Astro.props;
 
 
 ---
@@ -59,6 +59,17 @@ const { category, status_input } = Astro.props;
 <span class="text-red-600 text-xs font-medium inline-block mb-1 uppercase">
     <Icons name="close-circle" IconStyle="w-4 h-4 fill-red-600 mr-2 inline-block align-top" Box="0 0 24 24"/>
     {status_input}
+</span>
+)}
+
+{reply === 'Belum ada tanggapan' && (
+<span class="text-gray-800 py-1 px-2 mb-1 bg-gray-100 text-xs font-medium inline-block uppercase">
+    {reply}
+</span>
+)}
+{reply === 'Sudah ditanggapi' && (
+<span class="text-green-600 py-1 px-2 mb-1 bg-green-100 text-xs font-medium inline-block uppercase">
+    {reply}
 </span>
 )}
 

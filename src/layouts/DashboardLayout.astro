@@ -2,7 +2,7 @@
 import Icons from '../components/Icons.astro';
 import Avatars from '../components/Avatars.astro';
 
-const { title, currentPage } = Astro.props;
+const { title, currentPage, akunType } = Astro.props;
 ---
 
 
@@ -12,10 +12,18 @@ const { title, currentPage } = Astro.props;
             <Avatars imageUrl="" name="Andi Julianto" size="w-24 h-24" />
             <h4 class="text-base font-bold text-black mt-4 mb-2">Andi Julianto</h4>
             <h4 class="text-xs text-gray-500">Join 14 Agu 2024</h4>
-            <div class="flex items-center text-sm text-blue-600 justify-center mt-2">
-                <Icons name="check" IconStyle="w-6 h-6 bg-white rounded-full fill-blue-600 mr-2" Box="0 0 24 24"/>
-                Verified
-            </div>
+            {akunType === 'Personal' && (
+                <div class="flex items-center text-sm text-blue-600 justify-center mt-2">
+                    <Icons name="check" IconStyle="w-6 h-6 bg-white rounded-full fill-blue-600 mr-2" Box="0 0 24 24"/>
+                    Verified
+                </div>
+            )}
+            {akunType === 'Company' && (
+                <div class="flex items-center text-sm text-yellow-400 justify-center mt-2">
+                    <Icons name="check" IconStyle="w-6 h-6 bg-white rounded-full fill-yellow-400 mr-2" Box="0 0 24 24"/>
+                    Verified
+                </div>
+            )}
         </div>
         <div class="bg-white divide-y divide-gray-100 rounded-lg shadow  dark:bg-gray-700 dark:divide-gray-600 sticky top-[106px]">
             <div class="text-sm text-gray-900 dark:text-white w-full">

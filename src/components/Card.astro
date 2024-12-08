@@ -5,7 +5,7 @@ import Icons from './Icons.astro';
 import { formatNumber } from '../utils/formatNumber';
 
 
-const { title, short_desc, desc, cover, category, link, avatar, user, status, status_input, date, comment, viewer, name} = Astro.props;
+const { title, short_desc, desc, cover, category, reply, link, avatar, user, status, status_input, date, comment, viewer, name} = Astro.props;
 const countComment = formatNumber(comment); 
 const countViewer = formatNumber(viewer);
 ---
@@ -81,7 +81,7 @@ const countViewer = formatNumber(viewer);
             </a>
         </div>
         <div class="flex items-end lg:items-center mt-4 lg:mt-6">
-            <div class="w-6/12 lg:flex lg:items-center gap-3">
+            <div class="w-8/12 lg:flex lg:items-center gap-3">
                 <div class="flex items-center gap-3 mb-3 lg:mb-0">
                     <Avatars imageUrl={avatar} name={user} statusAkun={status} size="w-8 h-8" />
                     <div class="font-medium text-sm dark:text-white">
@@ -91,7 +91,7 @@ const countViewer = formatNumber(viewer);
                 <div class="w-1 h-1 rounded-lg bg-gray-300 hidden lg:block"></div>
                 <div class="text-sm text-gray-400">{date}</div>
             </div>
-            <div class="w-6/12 flex items-center gap-6 justify-end">
+            <div class="w-4/12 flex items-center gap-6 justify-end">
                 <div class="flex items-center gap-2">
                     <Icons name="comment" IconStyle="w-6 h-6 fill-gray-500" Box="0 0 18 19"/>
                     <div class="text-gray-600 text-sm">
@@ -112,7 +112,7 @@ const countViewer = formatNumber(viewer);
 <div class="w-full border-b border-gray-200 py-6 px-4 lg:px-0">
     <div class="flex items-center lg:items-start gap-4">
         <div class="w-9/12 lg:w-8/12">
-            <Badge category={category}/>
+            <Badge reply={reply}/>
             <a href={link}>
                 <h5 class="mb-2 mt-1 text-base lg:text-xl font-bold text-gray-900 hover:text-sk-900 dark:text-white">{title}</h5>
             </a>
@@ -130,19 +130,15 @@ const countViewer = formatNumber(viewer);
             <div class="w-1 h-1 rounded-lg bg-gray-300 hidden lg:block"></div>
             <div class="text-sm text-gray-400">{date}</div>
         </div>
-        <div class="w-6/12 flex items-center gap-6 justify-end">
-            <div class="flex items-center gap-2">
-                <Icons name="comment" IconStyle="w-6 h-6 fill-gray-500" Box="0 0 18 19"/>
-                <div class="text-gray-600 text-sm">
-                    {countComment}
-                </div>
-            </div>
-            <div class="flex items-center gap-2">
-                <Icons name="viewer" IconStyle="w-6 h-6 fill-gray-500" Box="0 0 18 19"/>
-                <div class="text-gray-600 text-sm">
-                    {countViewer}
-                </div>
-            </div>
+        <div class="w-6/12 flex items-center gap-4 justify-end">
+            <a href="/input_edit/" type="button" class="px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-sk-900  rounded-lg hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
+                <Icons name="write" IconStyle="w-4 h-4 fill-white mr-1" Box="0 0 16 17"/>
+                Ubah
+            </a>
+            <a href="/input_edit/" type="button" class="px-3 py-2 text-xs font-medium text-center inline-flex items-center border border-sk-900 text-sk-900 rounded-lg focus:ring-4 focus:outline-none focus:ring-sk-300 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-800">
+                <Icons name="delete" IconStyle="w-4 h-4 fill-white mr-1" Box="0 0 24 24"/>
+                Hapus
+            </a>
         </div>
     </div>
 </div>

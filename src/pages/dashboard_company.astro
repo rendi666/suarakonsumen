@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DashboardLayout from '../layouts/DashboardLayout.astro';
+import Header from '../components/Header.astro';
+import Icons from '../components/Icons.astro';
+import Card from '../components/Card.astro';
+
+import content from '../data/content.json';
+// import Icons from '../components/Icons.astro';
+
+const contentFeed = content.slice(12, 14);
+
+
+---
+
+<Layout title="Dashboard">
+    <Header />
+    <DashboardLayout title="Dashboard" currentPage="dashboard" akunType="Company">
+        <div slot="right">
+            <div class="flex my-4 gap-4">
+                <div class="relative w-4/12">
+                    <input type="search" id="search-dropdown" class="block p-2 focus:ring-sk-300 focus:border-gray-300 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-s-gray-300 border-s-1 border border-gray-300 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Search..." required />
+                    <button type="submit" class="absolute top-0 end-0 p-2 text-sm font-medium h-full text-white bg-gray-100 border-s-gray-50 rounded-e-lg border border-gray-300 hover:bg-sk-800 focus:ring-4 focus:outline-none focus:ring-sk-200 dark:bg-sk-600 dark:hover:bg-sk-700 dark:focus:ring-sk-200">
+                        <Icons name="search" IconStyle="w-4 h-4 fill-grey-600" Box="0 0 20 20"/>
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+            </div>
+            {
+                contentFeed.map(({ title, short_desc, cover, reply, link, avatar, user, status, status_input, date, comment, viewer }) => (
+                    <Card 
+                        name="feed-dashboard" 
+                        slot="left"
+                        title={title} 
+                        short_desc={short_desc} 
+                        cover={cover} 
+                        reply={reply} 
+                        link={link} 
+                        avatar={avatar} 
+                        user={user} 
+                        status={status} 
+                        status_input={status_input} 
+                        date={date}
+                        comment={comment}
+                        viewer={viewer}
+                    />
+                ))
+            }
+        </div>
+    </DashboardLayout>
+</Layout>
